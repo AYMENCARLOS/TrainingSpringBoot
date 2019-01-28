@@ -1,4 +1,4 @@
-package guru.springframework.demo.Model;
+package guru.springframework.demo.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
