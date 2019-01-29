@@ -6,6 +6,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+/**
+ *  Created by Aymen B.Y
+ */
 
 @Entity
 public class Book {
@@ -24,6 +27,8 @@ public class Book {
                     inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors = new HashSet<>();
 
+    public Book() {
+    }
 
     public Book(String title, String isbn, Publisher publisher) {
         this.title = title;

@@ -11,16 +11,21 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DevBootstrap  implements ApplicationListener<ContextRefreshedEvent> {
+public class DemoContextListener  implements ApplicationListener<ContextRefreshedEvent> {
 
     private AuthorRepository authorRepository;
     private BookRepository bookRepository;
     private PublisherRepository publisherRepository;
 
-    public DevBootstrap(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
+    public DemoContextListener(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
+    }
+
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent event) {
+        initData();
     }
 
     private void initData(){
@@ -50,8 +55,4 @@ public class DevBootstrap  implements ApplicationListener<ContextRefreshedEvent>
 
     }
 
-    @Override
-    public void onApplicationEvent(ContextRefreshedEvent event) {
-        initData();
-    }
 }

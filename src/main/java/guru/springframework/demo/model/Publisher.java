@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ *  Created by Aymen B.Y
+ */
+
 @Entity
 public class Publisher {
 
